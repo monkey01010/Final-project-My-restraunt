@@ -1,2 +1,2 @@
-# Final-project-My-restraunt
-My purpose is to make a website about my Restraunt using flask
+# Final-project-My-restaurant
+My purpose is to make a website about my Restaurant using flask
