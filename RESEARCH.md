@@ -25,3 +25,7 @@ Reason: Learning about the basics of Flask
 Video: How to Make a Website with Python (Flask app tutorial)
 Source: https://www.youtube.com/watch?v=qaBo_IiE4Gc
 Reason: Learning how to start a website and get it running
+
+Video: E-commerce website online shop Add to cart online shop with flask python tutorial part 24
+Sourcehttps://www.youtube.com/watch?v=nBAxuxM9tpw 
+Wanted to learn how to add a cart function and how to use it and add items to it.
