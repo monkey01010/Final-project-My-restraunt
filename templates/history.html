@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--This is starting the HTML File in the language english-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This is setting the title as history and starting the usual file formats that Will be used later when I want to add text and costomize it-->
+    <title>History</title>
+    <style>
+        
+        body {
+            background-color: black;
+            color: white;
+            padding: 20px; /*This is the format of the home page by setting the color of the back ground to black and the text to white*/
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00ff00; /* This is to make the text green */
+        }
+        /**/
+        #history-info {
+            margin-top: 20px;
+        }
+
+        #history-image {
+            max-width: 100%; /* This is Here to ajust the size of the image */
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('history') }}">History</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('view_cart') }}">Cart</a></li>
+        </ul>
+    </nav>
+
+    <h1>History</h1>
+    <!--Calls the image History from the static folder-->
+    <img id="history-image" src="{{ url_for('static', filename='history_image.jpg')|safe }}" >
+    <!--These lines of code are in the body format and are outputing anything between the <p>. I asked Chat.gpt to make a quick 100 History about a restruant namedd happy restraunt and the owner name is Kaelin Nepean-->
+    <div id="history-info">
+        <p>
+            In Chuckleville, Kaelin Nepean, a self-appointed "Maestro of Mirth," concocted the Happy Restaurant, a haven where laughter was the secret ingredient. Serving up comedic chaos, Kaelin turned meals into sidesplitting spectacles. The restaurant's vibrant decor featured tables resembling grinning emojis and chairs that mimicked whoopee cushions, creating an atmosphere as lively as the laughter-filled menu. The waitstaff doubled as stand-up comedians, ensuring each order came with a side of hilarity. Despite occasional food fights, with spaghetti and whipped cream as ammunition, Chuckleville embraced the Happy Restaurant, proving that a hearty laugh pairs perfectly with any meal. Kaelin's legacy of laughter echoed through the town.
+        </p>
+    </div>
+</body>
+    <!--These lines of code are ending all the body and format codes which then end the lines of code for the HTML page-->
+</html>

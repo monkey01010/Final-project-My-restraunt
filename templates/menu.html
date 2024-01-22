@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00ff00; /* Green color for links */
+        }
+
+        .menu-item {
+            margin-bottom: 20px;
+        }
+
+        .menu-image {
+            max-width: 100px; /* The measurments for the size of the image */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .menu-details {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('history') }}">History</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('view_cart') }}">Cart</a></li>
+        </ul>
+    </nav>
+
+    <h1>Menu</h1>
+    <!--These lines of are calling the menu item option. They first call the menu item image that is stored in my Static folder, Then they add the information for the specifed item. After if you click the link below that is bonded to the word add to cart, the add to cart function is called upon from my Main.py which is like the back bone of the website. The code then uses this function to add the item to the list and the cost-->
+    <div class="menu-item">
+         <img class="menu-image" src="{{ url_for('static', filename='pizza.jpg')|safe }}" >
+        <div class="menu-details">
+            <h2>Pizza Slice</h2>
+            <p>$14.99</p>
+            <a href="{{ url_for('add_to_cart', item_name='pizza_slice') }}">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img class="menu-image" src="{{ url_for('static', filename='hamburger.jpg')|safe }}" >
+        <div class="menu-details">
+            <h2>Hamburger</h2>
+            <p>$12.99</p>
+            <a href="{{ url_for('add_to_cart', item_name='hamburger') }}">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img class="menu-image" src="{{ url_for('static', filename='steak.jpg')|safe }}" >
+        <div class="menu-details">
+            <h2>Steak</h2>
+            <p>$22.99</p>
+            <a href="{{ url_for('add_to_cart', item_name='steak') }}">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img class="menu-image" src="{{ url_for('static', filename='french_fries.jpg')|safe }}">
+        <div class="menu-details">
+            <h2>French Fries</h2>
+            <p>$3.99</p>
+            <a href="{{ url_for('add_to_cart', item_name='french_fries') }}">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img class="menu-image" src="{{ url_for('static', filename='meatball_sub.jpg')|safe }}" >
+        <div class="menu-details">
+            <h2>Meatball Sub</h2>
+            <p>$10.99</p>
+            <a href="{{ url_for('add_to_cart', item_name='meatball_sub') }}">Add to Cart</a>
+        </div>
+    </div>
+<!--These are the ending code that end the body format and the HTML file like the rest of the pages-->
+</body>
+</html>
+<!--Favrite code is the Bean gif. Figured out it wa same as a pic-->

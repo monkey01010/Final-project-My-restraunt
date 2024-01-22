@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--Starts the format for the HTLM file. HTLM stand for Hyper text markup language-->
+<html lang="en">
+<!--Starts and stores the relevent information for the -->
+<head>
+    <!--These lines of code here are used to set the screen to view the webpage or the viewport-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This sets the title of the page as cart-->
+    <title>Cart</title>
+    <!--This is used to link the css file to the html file. Meaning the file will be displayed in a css format. This is to help set format for the custom formats for the text--> 
+    <style>
+        /*This is used to set the background to the color black the padding is like an extra space between parts of the displayed website */
+        body {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        /*These lines of code are used to set the top bar where the Url are*/
+        /*This is to set the list style. This removes any type basic list setting to none making it more like a sentence*/
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        /*Edits the inline format or how far to the right it is from the previous one*/
+        nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+        /*This edits the text specificly*/
+        nav a {
+            text-decoration: none;
+            color: #00ff00; /* Green color for links */
+        }
+            /*This is used to add space to the cart items*/
+        #cart-items {
+            margin-top: 20px;
+        }
+        /*This is used to add space or the indenting 20 pixles down and 10 to the right*/
+        #totals {
+            margin-top: 20px;
+            padding: 10px;
+            
+        }
+        
+        
+    </style>
+</head>
+    <!--This calls upon the body format-->
+<body>
+    <!--This calls the navagaction format-->
+    <nav>
+        <!--This is using the navagaction format to set the url and the text tied to them-->
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('history') }}">History</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('view_cart') }}">Cart</a></li>
+            <!--Ends the Navagaction format settings-->
+        </ul>
+        <!--End the need for the Navagaction format-->
+    </nav>
+    <!--This is used to set the leading of the cart page as Cart-->
+    <h1>Cart</h1>
+    <!--This is used to call upon the items in cart and display them-->        
+    <div id="cart-items">
+        <!--These get the items that are in the cart and make a loop statment to display them. This is kind of like a for loop mixed with a F string-->
+        {% for item in cart %}
+            <p>{{ item["name"] }} - ${{ item["price"] }}</p>
+        <!--used to end the for loop-->
+        {% endfor %}
+    <!--Ends the need for the cart item loop-->
+    </div>
+    <!--This is used to set the totals of the cart and display them-->
+    <div id="totals">
+        <!--This is used to set the vaules of cart and calaclaute the totals using the sum() function-->
+        {% set total = cart|sum(attribute = "price") %}
+        {% set total_after_tax = total * 1.13 %}
+        <!--This set the text for and calls upon the the total and total_after_tax intagers. The round 2 part means round to the second decimal place. Call the vaules for the total as well as total after tax from before-->
+        <p>Total: ${{ total|round(2) }}</p>
+        <p>Total after Tax (13%): ${{ total_after_tax|round(2) }}</p>
+    </div>
+    <!--This is used to display the image of the money. It recieves the name of the file is money which is an image. Then it gets it can be found in the folder name static and is called money.jpg-->
+    <img id="money-image" src="{{ url_for('static', filename='money.jpg')|safe }}">
+    <!--Ends the body format-->
+</body>
+    <!--Ends the HTLM file-->
+</html>
+ 

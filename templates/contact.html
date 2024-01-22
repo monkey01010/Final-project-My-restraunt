@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--getting the html template-->
+<html lang="en">
+<head>
+    <!--Like last time this is setting the screen or the display size-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This is the title of the page-->
+    <title>Contact</title>
+    <style>
+        /*This is setting the background and style for the background as white*/
+        body {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        /*This is used to set the top bar(Navgaction) where the url are*/
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+        /*This is used to set the color of the the text for the Navagaction to Green*/
+        nav a {
+            text-decoration: none;
+            color: #00ff00; /* This is the color Green for the Links */
+        }
+        /*This is used to set the color and format for contact info*/
+        #contact-info {
+            color: #ff0000; /* This is for the color red*/
+            margin-top: 20px;
+        }
+
+        
+       <body> 
+    </style>
+</head>
+
+    <nav>
+        <!--This is using the format for the navgaction and setting the text with the url tied to them. It is first calling upon the top bar navagaction, then it is calling upon the indentaction to the right and is finally calling upon the custom text-->
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('history') }}">History</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('view_cart') }}">Cart</a></li>
+        </ul>
+    </nav>
+
+    <h1>Contact</h1>
+
+        <!--This is used to call on the format for contact information and is setting the custom text-->
+    <div id="contact-info">
+        <p>Email: happyur@whoknows.yrustillhere</p>
+        <p>Phone: 911-911-1119</p>
+    </div>
+    <!--These lines of code are very similar but vary slightly from the previous image lines of code that you saw. I later figured out that gifs could be treated the same as an image and could be used the same way. -->
+    <img id="call-gif" src="{{ url_for('static', filename='call.gif')|safe }}">
+</body>
+    
+</html>
